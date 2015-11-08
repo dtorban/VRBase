@@ -47,7 +47,8 @@ cmake_minimum_required (VERSION 2.8.2)
 project (VRBase)
 
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-    set (CMAKE_INSTALL_PREFIX "${${PROJECT_NAME}_SOURCE_DIR}/build/install" CACHE PATH "default install path" FORCE )
+    #set (CMAKE_INSTALL_PREFIX "${${PROJECT_NAME}_SOURCE_DIR}/build/install" CACHE PATH "default install path" FORCE )
+    set (CMAKE_INSTALL_PREFIX "$ENV{MinVR_DIR}" CACHE PATH "default install path" FORCE )
 endif()
 
 # Use the root of the MinVR tree as an include dir, then include headers like this:
@@ -68,10 +69,10 @@ include(ExternalProject)
 
 message(${${PROJECT_NAME}_INSTALL_PREFIX} ${PROJECT_NAME})
 set(plugin_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/PluginFW")
-set(plugin_CMAKE_ARGS "-DCMAKE_INSTALL_PREFIX=${plugin_INSTALL_DIR}")
+set(plugin_CMAKE_ARGS -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} -DCMAKE_INSTALL_PREFIX=${plugin_INSTALL_DIR})
 
 ExternalProject_add(PluginFW
-		PREFIX "${CMAKE_SOURCE_DIR}/dependencies/PluginFW"
+		PREFIX "${CMAKE_SOURCE_DIR}/dependencies/${CMAKE_BUILD_TYPE}/PluginFW"
 		GIT_REPOSITORY https://github.com/ivlab/PluginFramework.git
 		GIT_TAG master
 		INSTALL_DIR "${plugin_INSTALL_DIR}"

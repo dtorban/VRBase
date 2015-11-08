@@ -116,3 +116,6 @@ clobber:
     ifeq ($(ARCH), linux)
 	rm -rf ../$(DIRNAME)_eclipse
     endif
+	rm -rf dependencies
+	rm -rf ${MinVR_DIR}/PluginFW
+	rm -rf ${MinVR_DIR}/VRBase
