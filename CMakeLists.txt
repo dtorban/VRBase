@@ -57,7 +57,6 @@ include_directories (${CMAKE_CURRENT_SOURCE_DIR})
 ############################################################
 #Start of library detection
 #Any libraries outside of your source should have a corresponding
-#find module in the $G/src/cmake/Modules directory and the 
 #find_package method should be used here.
 ############################################################
 

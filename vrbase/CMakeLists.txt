@@ -23,12 +23,11 @@ include_directories (
   include
 )
 
-add_library (${PROJECT_NAME} source/main.cpp)
-# ${SOURCEFILES} ${HEADERFILES})
+add_library (${PROJECT_NAME} ${SOURCEFILES} ${HEADERFILES})
 
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION "include")
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION "VRBase/include")
 
 install( TARGETS ${PROJECT_NAME}
-         LIBRARY DESTINATION lib
-         ARCHIVE DESTINATION lib
-         RUNTIME DESTINATION bin)
+         LIBRARY DESTINATION VRBase/lib
+         ARCHIVE DESTINATION VRBase/lib
+         RUNTIME DESTINATION VRBase/bin)
