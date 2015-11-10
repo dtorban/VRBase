@@ -71,6 +71,10 @@ message(${${PROJECT_NAME}_INSTALL_PREFIX} ${PROJECT_NAME})
 set(plugin_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/PluginFW")
 set(plugin_CMAKE_ARGS -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} -DCMAKE_INSTALL_PREFIX=${plugin_INSTALL_DIR})
 
+if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+	set(GIT_EXECUTABLE "C:/Program Files (x86)/Git/bin/git.exe")
+endif (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+
 ExternalProject_add(PluginFW
 		PREFIX "${CMAKE_SOURCE_DIR}/dependencies/${CMAKE_BUILD_TYPE}/PluginFW"
 		GIT_REPOSITORY https://github.com/ivlab/PluginFramework.git
