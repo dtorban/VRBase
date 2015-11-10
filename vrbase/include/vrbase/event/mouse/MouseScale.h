@@ -6,17 +6,17 @@
  * 		Dan Orban (dtorban)
  */
 
-#ifndef MOUSETRANSLATOR_H_
-#define MOUSETRANSLATOR_H_
+#ifndef MOUSESCALE_H_
+#define MOUSESCALE_H_
 
 #include "vrbase/event/mouse/MouseListener.h"
 
 namespace vrbase {
 
-class MouseTranslator : public MouseListener {
+class MouseScale : public MouseListener {
 public:
-	MouseTranslator(glm::dmat4* trans, MouseButton button = MouseButton::RIGHT);
-	virtual ~MouseTranslator();
+	MouseScale(glm::dmat4* trans, MouseButton button = MouseButton::MIDDLE);
+	virtual ~MouseScale();
 
 	void handleClick(MouseButton button, bool down, const glm::dvec2& pos);
 	void handleMove(const glm::dvec2& pos);
@@ -25,6 +25,7 @@ private:
 	MouseButton _button;
 	glm::dmat4* _trans;
 	bool _buttonDown;
+	glm::dvec2 _startPos;
 	glm::dvec2 _lastPos;
 };
 

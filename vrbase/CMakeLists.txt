@@ -6,6 +6,8 @@ project (vrbase)
 set (SOURCEFILES 
 		source/event/mouse/MouseListener.cpp
 		source/event/mouse/MouseTranslator.cpp
+		source/event/mouse/MouseTrackball.cpp
+		source/event/mouse/MouseScale.cpp
 		source/scene/CompositeScene.cpp
 		source/Box.cpp
 		source/Mesh.cpp
@@ -15,6 +17,8 @@ set (HEADERFILES
 		include/vrbase/Scene.h
 		include/vrbase/event/mouse/MouseListener.h
 		include/vrbase/event/mouse/MouseTranslator.h
+		include/vrbase/event/mouse/MouseTrackball.h
+		include/vrbase/event/mouse/MouseScale.h
 		include/vrbase/scene/CompositeScene.h
 		include/vrbase/Box.h
 		include/vrbase/EventListener.h

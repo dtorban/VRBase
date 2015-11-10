@@ -47,6 +47,12 @@ void MouseListener::handleEvent(const MinVR::EventRef& event,
 
 	if (startsWith(event->getName(), "mouse_", 6))
 	{
+		if (event->getName() == "mouse_scroll")
+		{
+			handleClick(MouseButton::SCROLL, event->get2DData().y > 0, event->get2DData());
+			return;
+		}
+
 		MinVR::WindowRef window = event->getWindow();
 		glm::dvec2 res(window->getWidth(), window->getHeight());
 		glm::dvec2 pos = event->get2DData() / res;

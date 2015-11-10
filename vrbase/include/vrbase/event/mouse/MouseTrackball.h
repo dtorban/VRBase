@@ -6,17 +6,17 @@
  * 		Dan Orban (dtorban)
  */
 
-#ifndef MOUSETRANSLATOR_H_
-#define MOUSETRANSLATOR_H_
+#ifndef MOUSETRACKBALL_H_
+#define MOUSETRACKBALL_H_
 
 #include "vrbase/event/mouse/MouseListener.h"
 
 namespace vrbase {
 
-class MouseTranslator : public MouseListener {
+class MouseTrackball : public MouseListener {
 public:
-	MouseTranslator(glm::dmat4* trans, MouseButton button = MouseButton::RIGHT);
-	virtual ~MouseTranslator();
+	MouseTrackball(glm::dmat4* trans, MouseButton button = MouseButton::LEFT);
+	virtual ~MouseTrackball();
 
 	void handleClick(MouseButton button, bool down, const glm::dvec2& pos);
 	void handleMove(const glm::dvec2& pos);
