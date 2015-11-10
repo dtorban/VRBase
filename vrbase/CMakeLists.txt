@@ -4,6 +4,8 @@ project (vrbase)
 
 #This is how you specific source file individually
 set (SOURCEFILES 
+		source/event/mouse/MouseListener.cpp
+		source/event/mouse/MouseTranslator.cpp
 		source/scene/CompositeScene.cpp
 		source/Box.cpp
 		source/Mesh.cpp
@@ -11,8 +13,11 @@ set (SOURCEFILES
 		source/Texture.cpp)
 set (HEADERFILES 
 		include/vrbase/Scene.h
+		include/vrbase/event/mouse/MouseListener.h
+		include/vrbase/event/mouse/MouseTranslator.h
 		include/vrbase/scene/CompositeScene.h
 		include/vrbase/Box.h
+		include/vrbase/EventListener.h
 		include/vrbase/Shader.h
 		include/vrbase/Mesh.h
 		include/vrbase/Texture.h)
